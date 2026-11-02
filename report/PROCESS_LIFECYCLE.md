@@ -858,13 +858,13 @@ Child Process
    kexit()
       |
       v
+wakeup(parent)
+      |
+      v
 Save Exit Status
       |
       v
 State = ZOMBIE
-      |
-      v
-wakeup(parent)
       |
       v
 Parent Resumes
@@ -1106,10 +1106,10 @@ Kernel Initialization
                                   exit()
                                     |
                                     v
-                                ZOMBIE
+                              wakeup(parent)
                                     |
                                     v
-                             wakeup(parent)
+                                  ZOMBIE
                                     |
                                     v
                               wait() returns
